@@ -1,0 +1,12 @@
+{
+    "name": "prebelli/movies-passion",
+    "require": {
+        "twbs/bootstrap": "^5.0"
+    },
+    "authors": [
+        {
+            "name": "Clayton Prebelli",
+            "email": "clayton.pires@aluno.unip.br"
+        }
+    ]
+}
