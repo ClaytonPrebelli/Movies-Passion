@@ -1,0 +1,127 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.links{
+    justify-items: flex-end;
+    text-align: center;
+    margin-left: 50px;
+}
+main{
+   top:50pt;
+   left: 0;
+   position: fixed;
+   width: 100vw;
+   z-index: 150;
+  
+}
+.busca{
+    height: 160px;
+    color:rgb(255, 255, 255);
+    text-shadow:2px 2px 1px black;
+    background-image:url("../assets/img/bg.jpg");
+    background-position:top;
+    background-color: rgba(138, 138, 138, 0.527);
+    background-blend-mode:soft-light;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    padding-left: 50px;
+    padding-top: 10px;
+    display:flex;
+    flex-direction:row;
+}
+.label_busca{
+    margin-right: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 15px;
+}
+.formu{
+    border-radius: 10px;
+    outline: 0;
+    border:none;
+    padding:auto;
+    padding-left: 15px;
+    width: 350px;
+}
+input:focus{
+    background-color: rgb(197, 211, 240);
+    color:black;
+    border-bottom: 2px solid rgba(64,115,255,1);
+    
+}
+.enviar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+}
+#enviar{
+   margin-top: 28px;
+    width:150px;
+    height:30px;
+    margin-left:-70px;
+    border-radius: 5px;
+    border:none;
+    background: rgb(64,115,255);
+background: linear-gradient(90deg, rgba(64,115,255,1) 0%, rgba(9,9,121,1) 100%);
+    color:white;
+}
+#enviar:hover{
+    border:1px solid rgb(197, 211, 240);
+}
+.corpo{
+    width: 90%;
+    margin-top: 170pt;
+    
+    justify-content: flex-start;
+    align-items:flex-start;
+    z-index: 15;
+    background-color: rgb(26, 26, 26);
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+    color:white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    padding-bottom: 15px;
+}
+.card{
+    width: 30%;
+    background-color: #ccc;
+    margin-top: 15px;
+    color:black;
+    height: 400px;  
+    box-sizing:content-box;
+    box-shadow: 1px 1px 8px 3px rgba(64, 115, 255, 0.699);
+    padding-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.card p{
+    font-size: 0.8rem;
+    margin-top: -8pt;
+}
+.corpo img{
+    border-radius: 8px;
+    margin:0 auto;
+}
+.tit_filme{
+    text-align: center;
+    height: 45px;
+}
+.lanc_gen{
+    display: flex;
+    justify-content: space-around;
+    margin-top: -10pt;
+    margin-bottom: -10pt;
+}
+.info{
+    flex-direction: column;
+}

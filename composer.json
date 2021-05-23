@@ -1,7 +1,7 @@
 {
     "name": "prebelli/movies-passion",
     "require": {
-        "twbs/bootstrap": "^5.0"
+        
     },
     "authors": [
         {
