@@ -19,7 +19,7 @@ A plataforma encontra-se online e funcional em [Movies-Passion](https://www.preb
 
 ___
 
-# Movies-Passion (pt-BR)
+# Movies-Passion (en-US)
 
 Search platform for films and content using an API of TMDB.
 
