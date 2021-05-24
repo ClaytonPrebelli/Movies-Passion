@@ -72,8 +72,10 @@
 </main>
   <div class="corpo" id="list_cards">
   <?php
-      require('./backend/index.php');
-      exibe_geral();
+  $nome = $_POST['form_titulo'];
+  $genero = $_POST['form_genero'];
+     require('./backend/busc.php');
+     exibe_busca($nome,$genero);
 ?>
     </div>
 <script src="bootstrap/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

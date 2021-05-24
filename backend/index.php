@@ -1,11 +1,12 @@
 <?php
-
+$clicado_busca=false;
 
 function exibe_geral(){
 $images_path = 'https://image.tmdb.org/t/p/w500';
 $api_key = '4ec327e462149c3710d63be84b81cf4f';
 $url = "https://api.themoviedb.org/3/trending/all/week?api_key=4ec327e462149c3710d63be84b81cf4f&sort_by=original_title.asc&language=pt-BR";
 $json = json_decode(file_get_contents($url),true);
+$i=0;
 foreach($json['results'] as $json)
 {
   if($json['title']==null){}else{
@@ -51,8 +52,8 @@ foreach($json['results'] as $json)
     break;
     default:$genero_desc="Gênero não definido"; 
   }
-  if(strlen($json['overview']) > 197){
-    $sinopse = (substr($json['overview'], 0, 196))."...";
+  if(strlen($json['overview']) > 200){
+    $sinopse = (substr($json['overview'], 0, 220))." ...";
 }
 else{
     $sinopse = $json['overview'];
@@ -63,9 +64,9 @@ else{
  $reversdata = array_reverse($data_recebida);
  // Junta novamente a matriz em texto separado por tracinho (-)
  $data = implode("/", $reversdata);
-  echo '<div class="card">
+  echo '<div class="card" id="card'.$i.'">
   <h5 class="tit_filme">'.$json['title'].'</h5>
-    <img src="'.$images_path.$json['poster_path'].'" alt="" width="150px" height="200px">
+  <button class="bt_capa" style="background-image:url('.$images_path.$json['poster_path'].');" onclick="abremodal('.$json['id'].')"></button>
     <h6>Sinopse:</h6><p>'.$sinopse.'</p>
         <div class="lanc_gen">
           <div class="info">
@@ -75,7 +76,55 @@ else{
           <h6>Gênero</h6><p>'.$genero_desc.'</p>
           </div>
         </div>
-    </div>';
+        </div>
+        <div class="modal_filme" id="'.$json['id'].'">
+        <div class="conteudo_modal">
+          <div class="modal_image">
+          <img src="'.$images_path.$json['poster_path'].'" alt="capa">
+          </div>
+        
+        <div class="modal_descricao">
+          <div id="titulo_desc">
+            <h4>Título: '.$json['title'],'</h4>
+            <h6>Título Original: '.$json['original_title'].'</h6>
+            <div class="sino">
+            <h6>Sinopse:</h6>
+            <p>'.$json['overview'].'</p>
+            </div>
+            <div class="info_adc1">
+              <div class="in">
+                <h6>Gênero</h6>
+                <p><i class="fas fa-bookmark ic"></i>'.$genero_desc.'</p>
+              </div>
+              <div class="in">
+                <h6>Lançamento</h6>
+                <p><i class="fas fa-calendar-day ic"></i>'.$data.'</p>
+              </div>
+              <div class="in">
+                <h6>Nota</h6>
+                <p><i class="fas fa-star" id="star"></i>'.$json['vote_average'].'</p>
+              </div>
+              <div class="in">
+                <h6>Votos</h6>
+                <p><i class="fas fa-poll ic"></i>'.$json['vote_count'].'</p>
+              </div>
+              <div class="in">
+                <h6>Popularidade</h6>
+                <p><i class="fas fa-heart" id="coracao"></i>'.$json['popularity'].'</p>
+              </div>
+              <div class="in">
+                <h6>Idioma Original</h6>
+                <p><i class="fas fa-language ic"></i>'.$json['original_language'].'</p>
+              </div>
+            </div>
+            <div class="info_adc2">
+              <button id="voltar" onclick="voltar('.$json['id'].')">Voltar</button>
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>';
+
 }}};
 
 
